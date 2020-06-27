@@ -1,0 +1,17 @@
+query {
+  viewer {
+    repositories(last:10) {
+      nodes {
+        url
+        name
+        languages(last:10) {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

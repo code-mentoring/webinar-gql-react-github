@@ -1,3 +1,5 @@
+import './User.css';
+
 import React, { useEffect, useState } from 'react';
 
 import { API } from '../../lib/API';
@@ -10,22 +12,18 @@ export interface UserProps {
 export const User: React.FC<UserProps> = ({
   userName
 }) => {
-  const [user, setUser] = useState<UserType>()
+  const [user, setUser] = useState<UserType>();
 
   useEffect(() => {
-    API.getUser(userName).then(u => {
-      console.log(u);
-
-      setUser(u)
-    });
+    API.getUser(userName).then(setUser);
   }, [userName]);
 
-  if (!user) return null;
+  if (!user) return <span>Loading...</span>;
 
   return <div>
-    <img src={user.avatarUrl} alt=""/>
+    <img src={user.avatarUrl} className="profile" />
     <h2>{user.name}</h2>
-  </div>
+  </div>;
 }
 
 
