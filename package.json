@@ -37,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "graphql": "^15.1.0",
     "graphql.macro": "^1.4.2"
   }
